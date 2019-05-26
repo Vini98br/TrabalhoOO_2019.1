@@ -6,6 +6,7 @@
 package CamadaXadrez;
 
 import CamadaTabuleiro.Peca;
+import CamadaXadrez.Enum.Cor;
 
 /**
  *
@@ -13,5 +14,6 @@ import CamadaTabuleiro.Peca;
  */
 public class PecaXadrez extends Peca
 {
-    
+    Cor cor;
+    int contaMovimentos;
 }

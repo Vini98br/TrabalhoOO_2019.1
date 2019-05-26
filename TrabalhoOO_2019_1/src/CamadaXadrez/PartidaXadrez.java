@@ -5,11 +5,22 @@
  */
 package CamadaXadrez;
 
+import CamadaXadrez.Enum.Cor;
+
 /**
  *
  * @author vinic
  */
 public class PartidaXadrez
 {
+    int turn;
+    Cor JogadorAtual;
+    boolean check;
+    boolean checkmate;
+    PecaXadrez promocao;
+    PecaXadrez enPassantVulnerabilidade;
+    
+    
+    
     
 }
