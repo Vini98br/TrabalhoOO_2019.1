@@ -11,5 +11,7 @@ package CamadaTabuleiro;
  */
 public class Tabuleiro
 {
+    int coluna;
+    int linha;
     
 }

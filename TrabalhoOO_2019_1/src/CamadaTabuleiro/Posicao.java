@@ -11,5 +11,11 @@ package CamadaTabuleiro;
  */
 public class Posicao
 {
+    int coluna;
+    int linha;
     
+    void setValores(int linha,int coluna){
+        this.linha=linha;
+        this.coluna=coluna;
+    }
 }

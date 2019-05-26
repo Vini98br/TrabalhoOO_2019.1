@@ -11,5 +11,8 @@ package CamadaTabuleiro;
  */
 public class Peca
 {
-    
+   boolean possivelMovimento(Posicao posicao){
+       
+       return false;
+   }
 }
