@@ -9,7 +9,6 @@ package CamadaXadrez.Enum;
  *
  * @author vinic
  */
-public enum Cor
-{
+public enum Cor{
     
 }

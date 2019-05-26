@@ -16,4 +16,20 @@ public class PecaXadrez extends Peca
 {
     Cor cor;
     int contaMovimentos;
+    
+    PosicaoPeca getPosicaoPeca(){
+        return null;
+    }
+    
+    boolean temPecaRival(Posicao posicao){
+        return false;
+    }
+    
+    void incrementaContador(){
+        
+    }
+    
+    void decrementaContador(){
+        
+    }
 }

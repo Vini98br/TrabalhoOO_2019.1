@@ -9,7 +9,15 @@ package CamadaXadrez;
  *
  * @author vinic
  */
-public class PosicaoPeca
-{
+public class PosicaoPeca {
+    char coluna;
+    int linha;
     
+    Posicao paraPosicao(){
+        return null;
+    }
+    
+    PosicaoPeca dePosicao(Posicao posicao){
+        return null;
+    }
 }

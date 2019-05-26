@@ -20,7 +20,19 @@ public class PartidaXadrez
     PecaXadrez promocao;
     PecaXadrez enPassantVulnerabilidade;
     
+    PecaXadrez[][] getPecas(){
+        return null;
+    }
     
+    boolean[][] movimentosPossiveis(PosicaoPeca posicaoInicial){
+        return null;
+    }
     
+    PosicaoPeca movimento(PosicaoPeca posicaoInicial, PosicaoPeca posicaoAlvo){
+        return null;
+    }
     
+    PecaXadrez trocaPromocao(String tipo){
+        return null;
+    }
 }
