@@ -11,18 +11,18 @@ package CamadaTabuleiro;
  */
 public class Peca
 {
-    Posicao posicao;
+    private Posicao posicao;
     
-   boolean possivelMovimento(Posicao posicao){
+   public boolean possivelMovimento(Posicao posicao){
        
        return false;
    }
    
-   boolean[][] movimentosPossiveis(){
+   public boolean[][] movimentosPossiveis(){
        return null;
    }
    
-   boolean temAlgumPossivelmovimento(){
+   public boolean temAlgumPossivelmovimento(){
        return false;
    }
 }

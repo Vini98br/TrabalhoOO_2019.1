@@ -13,26 +13,26 @@ import CamadaXadrez.Enum.Cor;
  */
 public class PartidaXadrez
 {
-    int turn;
-    Cor JogadorAtual;
-    boolean check;
-    boolean checkmate;
-    PecaXadrez promocao;
-    PecaXadrez enPassantVulnerabilidade;
+    private int turn;
+    private Cor JogadorAtual;
+    private boolean check;
+    private boolean checkmate;
+    private PecaXadrez promocao;
+    private PecaXadrez enPassantVulnerabilidade;
     
-    PecaXadrez[][] getPecas(){
+    public PecaXadrez[][] getPecas(){
         return null;
     }
     
-    boolean[][] movimentosPossiveis(PosicaoPeca posicaoInicial){
+    public boolean[][] movimentosPossiveis(PosicaoPeca posicaoInicial){
         return null;
     }
     
-    PosicaoPeca movimento(PosicaoPeca posicaoInicial, PosicaoPeca posicaoAlvo){
+    public PosicaoPeca movimento(PosicaoPeca posicaoInicial, PosicaoPeca posicaoAlvo){
         return null;
     }
     
-    PecaXadrez trocaPromocao(String tipo){
+    public PecaXadrez trocaPromocao(String tipo){
         return null;
     }
 }

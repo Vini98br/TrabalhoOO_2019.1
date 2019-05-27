@@ -5,19 +5,21 @@
  */
 package CamadaXadrez;
 
+import CamadaTabuleiro.Posicao;
+
 /**
  *
  * @author vinic
  */
 public class PosicaoPeca {
-    char coluna;
-    int linha;
+    private char coluna;
+    private int linha;
     
-    Posicao paraPosicao(){
+    public Posicao paraPosicao(){
         return null;
     }
     
-    PosicaoPeca dePosicao(Posicao posicao){
+    public PosicaoPeca dePosicao(Posicao posicao){
         return null;
     }
 }

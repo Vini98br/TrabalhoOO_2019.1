@@ -6,6 +6,7 @@
 package CamadaXadrez;
 
 import CamadaTabuleiro.Peca;
+import CamadaTabuleiro.Posicao;
 import CamadaXadrez.Enum.Cor;
 
 /**
@@ -14,22 +15,22 @@ import CamadaXadrez.Enum.Cor;
  */
 public class PecaXadrez extends Peca
 {
-    Cor cor;
-    int contaMovimentos;
+    private Cor cor;
+    private int contaMovimentos;
     
-    PosicaoPeca getPosicaoPeca(){
+    public PosicaoPeca getPosicaoPeca(){
         return null;
     }
     
-    boolean temPecaRival(Posicao posicao){
+    public boolean temPecaRival(Posicao posicao){
         return false;
     }
     
-    void incrementaContador(){
+    public void incrementaContador(){
         
     }
     
-    void decrementaContador(){
+    public void decrementaContador(){
         
     }
 }
