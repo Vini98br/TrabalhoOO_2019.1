@@ -1,5 +1,5 @@
 package CamadaXadrez;
 
-public class Rainha extends PecaXadrez{
+public class Rainha extends PecaXadrez implements Movimento{
     
 }

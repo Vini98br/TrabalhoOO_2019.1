@@ -1,23 +1,25 @@
 package CamadaTabuleiro;
 
+import CamadaXadrez.PecaXadrez;
+
 public class Tabuleiro
 {
     private int coluna;
     private int linha;
     
-    public Peca peca(int linha ,int coluna){
+    public PecaXadrez peca(int linha ,int coluna){
         return null;
     }
     
-    public Peca peca(Posicao posicao){
+    public PecaXadrez peca(Posicao posicao){
         return null;
     }
     
-    public void posicionaPeca(Peca peca, Posicao posicao){
+    public void posicionaPeca(PecaXadrez peca, Posicao posicao){
         
     }
     
-    public Peca removePeca(Posicao posicao){
+    public PecaXadrez removePeca(Posicao posicao){
         return null;
     }
     

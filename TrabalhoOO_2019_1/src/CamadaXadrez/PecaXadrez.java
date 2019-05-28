@@ -1,6 +1,5 @@
 package CamadaXadrez;
 
-import CamadaTabuleiro.Peca;
 import CamadaTabuleiro.Posicao;
 import CamadaXadrez.Enum.Cor;
 
@@ -8,7 +7,7 @@ import CamadaXadrez.Enum.Cor;
  *
  * @author vinic
  */
-public class PecaXadrez extends Peca
+public class PecaXadrez 
 {
     private Cor cor;
     private int contaMovimentos;

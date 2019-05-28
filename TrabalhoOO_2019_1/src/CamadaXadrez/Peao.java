@@ -1,6 +1,6 @@
 package CamadaXadrez;
 
-public class Peao extends PecaXadrez
+public class Peao extends PecaXadrez implements Movimento
 {
     
 }
