@@ -1,11 +1,21 @@
 package CamadaTabuleiro;
 
 import CamadaXadrez.PecaXadrez;
+import java.util.ArrayList;
 
 public class Tabuleiro
 {
     private int coluna;
     private int linha;
+    ArrayList<PecaXadrez> pecas = new ArrayList<>();
+
+    public Tabuleiro() {
+        for(int i = 0; i < 32; i++){
+                
+        }
+    }
+    
+    
     
     public PecaXadrez peca(int linha ,int coluna){
         return null;

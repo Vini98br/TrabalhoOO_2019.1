@@ -3,10 +3,6 @@ package CamadaXadrez;
 import CamadaTabuleiro.Posicao;
 import CamadaXadrez.Enum.Cor;
 
-/**
- *
- * @author vinic
- */
 public class PecaXadrez 
 {
     private Cor cor;

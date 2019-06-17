@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CamadaTabuleiro;
 
-/**
- *
- * @author vinic
- */
 public class Posicao
 {
     private int coluna;
@@ -51,6 +42,6 @@ public class Posicao
     
     @Override
     public String toString(){
-        return linha + ", "+coluna;
+        return linha + ", " + coluna;
     }
 }
