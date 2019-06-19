@@ -1,6 +1,7 @@
 package CamadaXadrez;
 
 import CamadaXadrez.Enum.Cor;
+import CamadaXadrez.Exception.XadrezException;
 
 public class PartidaXadrez
 {

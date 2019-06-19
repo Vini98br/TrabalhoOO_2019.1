@@ -8,16 +8,17 @@ public class Tabuleiro
 {
     private int coluna;
     private int linha;
-    List<PecaXadrez> pecas = new ArrayList<>();
+    private PecaXadrez[][] pecas;
 
     public Tabuleiro(){
       
     }
 
-    public Tabuleiro(int coluna, int linha)
+    public Tabuleiro(int linha,int coluna)
     {
         this.coluna = coluna;
         this.linha = linha;
+        pecas = new PecaXadrez[linha][coluna];
     }
         
     public PecaXadrez peca(int linha ,int coluna){

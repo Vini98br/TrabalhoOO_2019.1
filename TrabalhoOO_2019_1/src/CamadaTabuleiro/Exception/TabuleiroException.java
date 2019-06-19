@@ -9,7 +9,7 @@ package CamadaTabuleiro.Exception;
  *
  * @author vinic
  */
-public class TabuleiroException extends Exception
+public class TabuleiroException extends RuntimeException
 {
     
 }

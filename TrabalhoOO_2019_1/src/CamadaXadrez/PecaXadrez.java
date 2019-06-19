@@ -1,18 +1,32 @@
 package CamadaXadrez;
 
 import CamadaTabuleiro.Posicao;
+import CamadaTabuleiro.Tabuleiro;
 import CamadaXadrez.Enum.Cor;
 
 public class PecaXadrez 
 {
     private Cor cor;
     private int contaMovimentos;
-    private Posicao posicao;
+    protected Posicao posicao;
+    
+    private Tabuleiro tabuleiro;
     
     public PecaXadrez(){
         
     }
 
+    public PecaXadrez(Tabuleiro tabuleiro)
+    {
+        this.tabuleiro = tabuleiro;
+        this.posicao=null;
+    }
+
+    protected Tabuleiro getTabuleiro()
+    {
+        return tabuleiro;
+    }
+  
     public PecaXadrez(Cor cor, int contaMovimentos, Posicao posicao)
     {
         this.cor = cor;

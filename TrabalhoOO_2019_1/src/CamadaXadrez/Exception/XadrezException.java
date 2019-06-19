@@ -9,7 +9,10 @@ package CamadaXadrez.Exception;
  *
  * @author vinic
  */
-public class XadrezException extends Exception
+public class XadrezException extends RuntimeException
 {
-    
+    public XadrezException(String msg)
+    {
+        super(msg);
+    }
 }
