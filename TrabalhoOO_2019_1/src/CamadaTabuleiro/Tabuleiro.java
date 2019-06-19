@@ -2,21 +2,24 @@ package CamadaTabuleiro;
 
 import CamadaXadrez.PecaXadrez;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tabuleiro
 {
     private int coluna;
     private int linha;
-    ArrayList<PecaXadrez> pecas = new ArrayList<>();
+    List<PecaXadrez> pecas = new ArrayList<>();
 
-    public Tabuleiro() {
-        for(int i = 0; i < 32; i++){
-                
-        }
+    public Tabuleiro(){
+      
     }
-    
-    
-    
+
+    public Tabuleiro(int coluna, int linha)
+    {
+        this.coluna = coluna;
+        this.linha = linha;
+    }
+        
     public PecaXadrez peca(int linha ,int coluna){
         return null;
     }
@@ -40,4 +43,26 @@ public class Tabuleiro
     public boolean temPeca(Posicao posicao){
         return false;
     }
+
+    public int getColuna()
+    {
+        return coluna;
+    }
+
+    public void setColuna(int coluna)
+    {
+        this.coluna = coluna;
+    }
+
+    public int getLinha()
+    {
+        return linha;
+    }
+
+    public void setLinha(int linha)
+    {
+        this.linha = linha;
+    }
+    
+    
 }
