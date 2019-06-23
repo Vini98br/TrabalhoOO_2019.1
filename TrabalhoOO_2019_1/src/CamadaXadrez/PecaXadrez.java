@@ -55,19 +55,9 @@ public class PecaXadrez
         return cor;
     }
 
-    public void setCor(Cor cor)
-    {
-        this.cor = cor;
-    }
-
     public int getContaMovimentos()
     {
         return contaMovimentos;
-    }
-
-    public void setContaMovimentos(int contaMovimentos)
-    {
-        this.contaMovimentos = contaMovimentos;
     }
 
     public Posicao getPosicao()

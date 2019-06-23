@@ -21,12 +21,14 @@ public class Tabuleiro
         pecas = new PecaXadrez[linha][coluna];
     }
         
-    public PecaXadrez peca(int linha ,int coluna){
-        return null;
+    public PecaXadrez peca(int linha ,int coluna)//retorna uma peça dada uma linha e uma coluna
+    { 
+        return pecas[linha][coluna];
     }
     
-    public PecaXadrez peca(Posicao posicao){
-        return null;
+    public PecaXadrez peca(Posicao posicao)//sobrecarga da funçao acima, retorna uma peça dada uma posiçao
+    {
+        return pecas[posicao.getLinha()][posicao.getColuna()];
     }
     
     public void posicionaPeca(PecaXadrez peca, Posicao posicao){
