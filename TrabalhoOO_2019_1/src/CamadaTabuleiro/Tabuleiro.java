@@ -1,5 +1,6 @@
 package CamadaTabuleiro;
 
+import CamadaTabuleiro.Exception.TabuleiroException;
 import CamadaXadrez.PecaXadrez;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,16 @@ public class Tabuleiro
     }
     
     public PecaXadrez removePeca(Posicao posicao){
-        return null;
+        if(!posicaoExiste(posicao)){
+            throw new TabuleiroException("Posição não encontrada");
+        }
+        if(peca(posicao) == null){
+            return null;
+        }
+        PecaXadrez aux = new PecaXadrez(posicao);
+        aux.posicao = null;
+        pecas[posicao.getLinha()][posicao.getColuna()] = null;
+        return aux;
     }
     
     public boolean posicaoExiste(Posicao posica){

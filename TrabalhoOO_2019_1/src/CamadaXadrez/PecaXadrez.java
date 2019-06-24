@@ -8,12 +8,16 @@ public class PecaXadrez
 {
     private Cor cor;
     private int contaMovimentos;
-    protected Posicao posicao;
+    public Posicao posicao;
     
     private Tabuleiro tabuleiro;
     
     public PecaXadrez(){
         
+    }
+    
+    public PecaXadrez(Posicao posicao){
+        this.posicao=posicao;
     }
 
     public PecaXadrez(Tabuleiro tabuleiro, Cor cor)
