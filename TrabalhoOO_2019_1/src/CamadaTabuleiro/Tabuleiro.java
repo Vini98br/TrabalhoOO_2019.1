@@ -32,6 +32,8 @@ public class Tabuleiro
     }
     
     public void posicionaPeca(PecaXadrez peca, Posicao posicao){
+        pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+        peca.posicao = posicao;
         
     }
     

@@ -16,8 +16,9 @@ public class PecaXadrez
         
     }
 
-    public PecaXadrez(Tabuleiro tabuleiro)
+    public PecaXadrez(Tabuleiro tabuleiro, Cor cor)
     {
+        this.cor = cor;
         this.tabuleiro = tabuleiro;
         this.posicao=null;
     }
@@ -27,10 +28,9 @@ public class PecaXadrez
         return tabuleiro;
     }
   
-    public PecaXadrez(Cor cor, int contaMovimentos, Posicao posicao)
+    public PecaXadrez(Cor cor, Posicao posicao)
     {
         this.cor = cor;
-        this.contaMovimentos = contaMovimentos;
         this.posicao = posicao;
     }
         

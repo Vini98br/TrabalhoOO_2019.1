@@ -4,6 +4,14 @@ import CamadaTabuleiro.Posicao;
 
 public class Rei extends PecaXadrez implements Movimento{
 
+    public Rei(Tabuleiro tabuleiro, Cor cor){
+        super(tabuleiro, cor);
+    }
+    
+    @Override
+    public String toString(){
+        return "k";
+    }
     @Override
     public boolean[][] movimentosPossiveis()
     {

@@ -4,6 +4,15 @@ import CamadaTabuleiro.Posicao;
 
 public class Torre extends PecaXadrez implements Movimento{
 
+    public Torre(Tabuleiro tabuleiro, Cor cor){
+        super(tabuleiro, cor);
+    }
+    
+    @Override
+    public String toString(){
+        return "T";
+    }
+    
     @Override
     public boolean[][] movimentosPossiveis()
     {

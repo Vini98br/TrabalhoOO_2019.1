@@ -3,6 +3,9 @@ package CamadaXadrez;
 import CamadaTabuleiro.Tabuleiro;
 import CamadaXadrez.Enum.Cor;
 import CamadaXadrez.Exception.XadrezException;
+import CamadaTabuleiro.Posicao;
+import CamadaXadrez.Rei;
+import CamadaXadrez.Torre;
 
 public class PartidaXadrez
 {
@@ -18,7 +21,8 @@ public class PartidaXadrez
 
     public PartidaXadrez()
     {
-
+        tabuleiro = new Tabuleiro(8, 8);
+        setUpInicial();
     }
 
     public PartidaXadrez(int turn, Cor JogadorAtual, boolean check, boolean checkmate, PecaXadrez promocao, PecaXadrez enPassantVulnerabilidade)
@@ -30,6 +34,7 @@ public class PartidaXadrez
         this.promocao = promocao;
         this.enPassantVulnerabilidade = enPassantVulnerabilidade;
         tabuleiro = new Tabuleiro(8, 8);
+        setUpInicial();
     }
 
     public PecaXadrez[][] getPecas()//retorna matriz de peças da partida de xadrez
@@ -120,4 +125,9 @@ public class PartidaXadrez
         this.enPassantVulnerabilidade = enPassantVulnerabilidade;
     }
 
+    private void setUpInicial(){
+        tabuleiro.posicionaPeca(new Torre(tabuleiro, Cor.BRANCA), new Posicao(2,1));
+        tabuleiro.posicionaPeca(new King(tabuleiro, Cor.PRETA, new Posicao(0,4)));
+        
+    }
 }
