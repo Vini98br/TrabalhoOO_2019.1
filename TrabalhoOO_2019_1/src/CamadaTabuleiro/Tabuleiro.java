@@ -22,9 +22,13 @@ public class Tabuleiro
         pecas = new PecaXadrez[linha][coluna];
     }
         
-    public PecaXadrez peca(int linha ,int coluna)//retorna uma peça dada uma linha e uma coluna
+    public PecaXadrez peca(int lin ,int col)//retorna uma peça dada uma linha e uma coluna
     { 
-        return pecas[linha][coluna];
+        if(lin < this.linha && col < this.coluna)
+            return this.pecas[lin][col];
+        else 
+            System.out.println("erro");
+        return null;
     }
     
     public PecaXadrez peca(Posicao posicao)//sobrecarga da funçao acima, retorna uma peça dada uma posiçao

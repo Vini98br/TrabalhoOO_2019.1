@@ -1,6 +1,8 @@
 package CamadaXadrez;
 
 import CamadaTabuleiro.Posicao;
+import CamadaTabuleiro.Tabuleiro;
+import CamadaXadrez.Enum.Cor;
 
 public class Rei extends PecaXadrez implements Movimento{
 

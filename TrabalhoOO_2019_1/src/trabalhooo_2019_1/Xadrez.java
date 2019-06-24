@@ -5,8 +5,12 @@ public class Xadrez{
 
     public static void main(String[] args){
     
+        
+        
         PartidaXadrez partida = new PartidaXadrez();
-        IU.imprimeTabuleiro(PartidaXadrez.getPecas());
+        IU.imprimeTabuleiro(partida.getPecas());
+        
+        
         
         
         System.out.println("teste");

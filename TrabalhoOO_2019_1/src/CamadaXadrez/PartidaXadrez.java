@@ -19,6 +19,8 @@ public class PartidaXadrez
 
     private Tabuleiro tabuleiro;
 
+    
+    
     public PartidaXadrez()
     {
         tabuleiro = new Tabuleiro(8, 8);
@@ -127,7 +129,7 @@ public class PartidaXadrez
 
     private void setUpInicial(){
         tabuleiro.posicionaPeca(new Torre(tabuleiro, Cor.BRANCA), new Posicao(2,1));
-        tabuleiro.posicionaPeca(new King(tabuleiro, Cor.PRETA, new Posicao(0,4)));
+        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.PRETA), new Posicao(0,4));
         
     }
 }
