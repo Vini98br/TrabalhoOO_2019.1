@@ -11,7 +11,7 @@ public class PosicaoPeca {
     PosicaoPeca(){
     }
     
-    PosicaoPeca(int linha, char coluna){
+    public PosicaoPeca(int linha, char coluna){
         if(coluna <'a' || coluna >'h' || linha < 1 || linha >8)//evitando erros de entrada
         {
             throw new XadrezException("Posiçao Invalida!");
