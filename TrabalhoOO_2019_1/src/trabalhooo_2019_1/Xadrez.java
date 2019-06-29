@@ -1,5 +1,6 @@
 package trabalhooo_2019_1;
 import CamadaXadrez.PartidaXadrez;
+import CamadaXadrez.PecaXadrez;
 
 public class Xadrez{
 
@@ -8,7 +9,8 @@ public class Xadrez{
         
         
         PartidaXadrez partida = new PartidaXadrez();
-        IU.imprimeTabuleiro(partida.getPecas());
+        PecaXadrez[][] mat= partida.getPecas();
+        IU.imprimeTabuleiro(mat);
         
         
         

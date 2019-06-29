@@ -41,10 +41,10 @@ public class PartidaXadrez
 
     public PecaXadrez[][] getPecas()//retorna matriz de peças da partida de xadrez
     {
-        PecaXadrez[][] mat = new PecaXadrez[tabuleiro.getLinha()][tabuleiro.getColuna()];
-        for (int i = 0; i < tabuleiro.getLinha();i++)
+        PecaXadrez[][] mat = new PecaXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
+        for (int i = 0; i <=tabuleiro.getLinhas();i++)
         {
-            for(int j=0;i<tabuleiro.getColuna();j++)
+            for(int j=0;i<=tabuleiro.getColunas();j++)
             {
                 mat[i][j]=tabuleiro.peca(i,j);
             }
@@ -129,7 +129,7 @@ public class PartidaXadrez
 
     private void setUpInicial(){
         tabuleiro.posicionaPeca(new Torre(tabuleiro, Cor.BRANCA), new Posicao(2,1));
-        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.PRETA), new Posicao(0,4));
+        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.PRETA), new Posicao(3,1));
         
     }
 }
