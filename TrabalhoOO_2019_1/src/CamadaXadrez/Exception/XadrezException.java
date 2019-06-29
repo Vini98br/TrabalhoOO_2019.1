@@ -5,11 +5,13 @@
  */
 package CamadaXadrez.Exception;
 
+import CamadaTabuleiro.Exception.TabuleiroException;
+
 /**
  *
  * @author vinic
  */
-public class XadrezException extends RuntimeException
+public class XadrezException extends TabuleiroException
 {
     public XadrezException(String msg)
     {

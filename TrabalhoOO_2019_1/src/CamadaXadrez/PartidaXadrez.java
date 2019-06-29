@@ -1,6 +1,7 @@
 package CamadaXadrez;
 
 import CamadaTabuleiro.Tabuleiro;
+import CamadaTabuleiro.Posicao;
 import CamadaXadrez.Enum.Cor;
 import CamadaXadrez.Exception.XadrezException;
 import CamadaTabuleiro.Posicao;
@@ -9,6 +10,10 @@ import CamadaXadrez.Torre;
 
 public class PartidaXadrez
 {
+
+    public static PecaXadrez faMovimento(PosicaoPeca origem, PecaXadrez destino) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     private int turn;
     private Cor JogadorAtual;
@@ -52,6 +57,29 @@ public class PartidaXadrez
         return mat;
     }
 
+    public PecaXadrez fazMovimento(PosicaoPeca origem, PosicaoPeca destino)
+    {
+            Posicao origem2 = origem.paraPosicao();
+            Posicao destino2 = destino.paraPosicao();
+            validarPosicaoOrigem(origem2);
+            PecaXadrez pecaCapturada = movimenta(origem2, destino2);
+            return pecaCapturada;
+    }
+    
+    private PecaXadrez movimenta(Posicao origem, Posicao destino)
+    {
+        PecaXadrez p = tabuleiro.removePeca(origem);
+        PecaXadrez capturada = tabuleiro.removePeca(destino);
+        tabuleiro.posicionaPeca(p, destino);
+        return capturada;
+    }
+    private void validarPosicaoOrigem(Posicao posicao)
+    {
+        if(!tabuleiro.temPeca(posicao)){
+            throw new XadrezException("Não tem nenhuma peça na posicao de origem");
+        }
+    }
+    
     public boolean[][] movimentosPossiveis(PosicaoPeca posicaoInicial)
     {
         return null;

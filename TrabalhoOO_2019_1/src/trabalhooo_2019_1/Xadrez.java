@@ -1,21 +1,31 @@
 package trabalhooo_2019_1;
 import CamadaXadrez.PartidaXadrez;
 import CamadaXadrez.PecaXadrez;
+import CamadaXadrez.*;
+import java.util.Scanner;
 
 public class Xadrez{
 
     public static void main(String[] args){
-    
         
-        
+        Scanner teclado = new Scanner(System.in);
         PartidaXadrez partida = new PartidaXadrez();
+        
+        while(true){
         PecaXadrez[][] mat= partida.getPecas();
-        IU.imprimeTabuleiro(mat);
+            IU.imprimeTabuleiro(mat);
+            System.out.println();
+            System.out.print("Origem: ");
+            PosicaoPeca origem = IU.lePosicaoPeca(teclado);
         
+            System.out.println();
+            System.out.print("Destino: ");
+            PecaXadrez destino = IU.lePosicaoPeca(teclado);
         
-        
-        
-        System.out.println("teste");
+            PecaXadrez capturada = PartidaXadrez.faMovimento(origem, destino);
+                
+            System.out.println("teste");
+        }
     }
     
 }
