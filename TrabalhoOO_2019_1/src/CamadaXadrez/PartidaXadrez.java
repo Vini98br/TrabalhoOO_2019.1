@@ -15,6 +15,10 @@ public class PartidaXadrez
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public static PecaXadrez faMovimento(PosicaoPeca origem, PosicaoPeca destino) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private int turn;
     private Cor JogadorAtual;
     private boolean check;

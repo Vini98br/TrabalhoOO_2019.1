@@ -20,10 +20,9 @@ public class Xadrez{
         
             System.out.println();
             System.out.print("Destino: ");
-            PecaXadrez destino = IU.lePosicaoPeca(teclado);
+            PosicaoPeca destino = IU.lePosicaoPeca(teclado);
         
-            PecaXadrez capturada = PartidaXadrez.faMovimento(origem, destino);
-                
+            PecaXadrez pecaCapturada = partida.fazMovimento(origem, destino);
             System.out.println("teste");
         }
     }
