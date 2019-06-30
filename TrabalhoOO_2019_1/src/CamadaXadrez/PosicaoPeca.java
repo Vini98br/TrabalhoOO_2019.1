@@ -28,7 +28,7 @@ public class PosicaoPeca {
     
     protected static PosicaoPeca dePosicao(Posicao posicao)//funcao que retorna a posicaoPeca com base na posicao da matriz
     {
-        return new PosicaoPeca( 8 - posicao.getLinha() , (char)('a' - posicao.getColuna()) );
+        return new PosicaoPeca( 8 - posicao.getLinha() , (char)('a' + posicao.getColuna()) );
     }
 
     public char getColuna()

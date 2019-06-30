@@ -52,6 +52,10 @@ public class IU
         System.out.println();
         System.out.println("Jogador da vez : " + partida.getTurn());
         System.out.println("Esperando jogador: " + partida.getJogadorAtual());
+        if(partida.isCheck())
+        {
+            System.out.println("CHECK!");
+        }
     }
 
 
