@@ -60,7 +60,11 @@ public class PartidaXadrez
         }
         return mat;
     }
-
+    private void nextTurn()
+    {
+        turn++;
+        JogadorAtual = (JogadorAtual == Cor.BRANCA) ? Cor.PRETA : Cor.BRANCA;
+    }
     public PecaXadrez fazMovimento(PosicaoPeca origem, PosicaoPeca destino)
     {
         Posicao origem2 = origem.paraPosicao();
@@ -139,11 +143,7 @@ public class PartidaXadrez
         return tabuleiro.peca(posicao).movimentosPossiveis();
     }
 
-    private void nextTurn()
-    {
-        turn++;
-        JogadorAtual = (JogadorAtual == Cor.BRANCA) ? Cor.PRETA : Cor.BRANCA;
-    }
+    
     
     private Cor oponente(Cor cor)
     {
