@@ -7,13 +7,11 @@ import CamadaXadrez.Exception.XadrezException;
 import CamadaTabuleiro.Posicao;
 import CamadaXadrez.Rei;
 import CamadaXadrez.Torre;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PartidaXadrez
 {
-
-    public static PecaXadrez faMovimento(PosicaoPeca origem, PecaXadrez destino) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     private int turn;
     private Cor JogadorAtual;
@@ -24,11 +22,14 @@ public class PartidaXadrez
 
     private Tabuleiro tabuleiro;
 
-    
-    
+    private List<PecaXadrez> pecasNoTabuleiro = new ArrayList<>();
+    private List<PecaXadrez> pecasCapturadas = new ArrayList<>();
+
     public PartidaXadrez()
     {
         tabuleiro = new Tabuleiro(8, 8);
+        turn = 1;
+        JogadorAtual = Cor.BRANCA;
         setUpInicial();
     }
 
@@ -47,11 +48,11 @@ public class PartidaXadrez
     public PecaXadrez[][] getPecas()//retorna matriz de peças da partida de xadrez
     {
         PecaXadrez[][] mat = new PecaXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
-        for (int i = 0; i <=tabuleiro.getLinhas();i++)
+        for (int i = 0; i <= tabuleiro.getLinhas(); i++)
         {
-            for(int j=0;i<=tabuleiro.getColunas();j++)
+            for (int j = 0; i <= tabuleiro.getColunas(); j++)
             {
-                mat[i][j]=tabuleiro.peca(i,j);
+                mat[i][j] = tabuleiro.peca(i, j);
             }
         }
         return mat;
@@ -66,17 +67,26 @@ public class PartidaXadrez
             PecaXadrez pecaCapturada = movimenta(origem2, destino2);
             return pecaCapturada;
     }
-    
+
     private PecaXadrez movimenta(Posicao origem, Posicao destino)
     {
         PecaXadrez p = tabuleiro.removePeca(origem);
         PecaXadrez capturada = tabuleiro.removePeca(destino);
         tabuleiro.posicionaPeca(p, destino);
+        
+        if(capturada != null)
+        {
+            pecasNoTabuleiro.remove(capturada);
+            pecasCapturadas.add(capturada);
+        }
+        
         return capturada;
     }
+
     private void validarPosicaoOrigem(Posicao posicao)
     {
-        if(!tabuleiro.temPeca(posicao)){
+        if (!tabuleiro.temPeca(posicao))
+        {
             throw new XadrezException("Não tem nenhuma peça na posicao de origem");
         }
     }
@@ -88,9 +98,31 @@ public class PartidaXadrez
         }
     }
     
+
     public boolean[][] movimentosPossiveis(PosicaoPeca posicaoInicial)
     {
-        return null;
+        Posicao posicao = posicaoInicial.paraPosicao();
+        validarPosicaoOrigem(posicao);
+        return tabuleiro.peca(posicao).movimentosPossiveis();
+    }
+
+    private void nextTurn()
+    {
+        turn++;
+        JogadorAtual = (JogadorAtual == Cor.BRANCA) ? Cor.PRETA : Cor.BRANCA;
+    }
+    
+    private void posicionaNovaPeca(char coluna, int linha , PecaXadrez peca)
+    {
+        tabuleiro.posicionaPeca(peca,new PosicaoPeca(linha, coluna).paraPosicao());
+        pecasNoTabuleiro.add(peca);
+    }
+    
+    private void setUpInicial()
+    {
+        tabuleiro.posicionaPeca(new Torre(tabuleiro, Cor.BRANCA), new Posicao(2, 1));
+        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.PRETA), new Posicao(3, 1));
+
     }
 
     public PosicaoPeca movimento(PosicaoPeca posicaoInicial, PosicaoPeca posicaoAlvo)
@@ -163,9 +195,4 @@ public class PartidaXadrez
         this.enPassantVulnerabilidade = enPassantVulnerabilidade;
     }
 
-    private void setUpInicial(){
-        tabuleiro.posicionaPeca(new Torre(tabuleiro, Cor.BRANCA), new Posicao(2,1));
-        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.PRETA), new Posicao(3,1));
-        
-    }
 }
