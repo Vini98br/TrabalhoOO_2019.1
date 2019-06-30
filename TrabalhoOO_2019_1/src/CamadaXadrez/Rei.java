@@ -26,7 +26,7 @@ public class Rei extends PecaXadrez implements Movimento{
         
         //acima
         p.setLinha(posicao.getLinha()-1);
-        p.setLinha(posicao.getColuna());
+        p.setColuna(posicao.getColuna());
         if(getTabuleiro().posicaoExiste(p)&& podeMover(p))
         {
             mat[p.getLinha()][p.getColuna()]=true;
@@ -34,7 +34,7 @@ public class Rei extends PecaXadrez implements Movimento{
         
         //abaixo
         p.setLinha(posicao.getLinha()+1);
-        p.setLinha(posicao.getColuna());
+        p.setColuna(posicao.getColuna());
         if(getTabuleiro().posicaoExiste(p)&& podeMover(p))
         {
             mat[p.getLinha()][p.getColuna()]=true;
@@ -42,7 +42,7 @@ public class Rei extends PecaXadrez implements Movimento{
         
         //esquerda
         p.setLinha(posicao.getLinha());
-        p.setLinha(posicao.getColuna()-1);
+        p.setColuna(posicao.getColuna()-1);
         if(getTabuleiro().posicaoExiste(p)&& podeMover(p))
         {
             mat[p.getLinha()][p.getColuna()]=true;
@@ -50,35 +50,35 @@ public class Rei extends PecaXadrez implements Movimento{
         
         //direita
         p.setLinha(posicao.getLinha());
-        p.setLinha(posicao.getColuna()+1);
+        p.setColuna(posicao.getColuna()+1);
         if(getTabuleiro().posicaoExiste(p)&& podeMover(p))
         {
             mat[p.getLinha()][p.getColuna()]=true;
         }
         //DIAGONAL NOROESTE
         p.setLinha(posicao.getLinha()-1);
-        p.setLinha(posicao.getColuna()-1);
+        p.setColuna(posicao.getColuna()-1);
         if(getTabuleiro().posicaoExiste(p)&& podeMover(p))
         {
             mat[p.getLinha()][p.getColuna()]=true;
         }
         //DIAGONAL NORDESTE
         p.setLinha(posicao.getLinha()-1);
-        p.setLinha(posicao.getColuna()+1);
+        p.setColuna(posicao.getColuna()+1);
         if(getTabuleiro().posicaoExiste(p)&& podeMover(p))
         {
             mat[p.getLinha()][p.getColuna()]=true;
         }
         //DIAGONAL SUDOESTE
         p.setLinha(posicao.getLinha()+1);
-        p.setLinha(posicao.getColuna()-1);
+        p.setColuna(posicao.getColuna()-1);
         if(getTabuleiro().posicaoExiste(p)&& podeMover(p))
         {
             mat[p.getLinha()][p.getColuna()]=true;
         }
         //DIAGONAL SUDESTE
         p.setLinha(posicao.getLinha()+1);
-        p.setLinha(posicao.getColuna()+1);
+        p.setColuna(posicao.getColuna()+1);
         if(getTabuleiro().posicaoExiste(p)&& podeMover(p))
         {
             mat[p.getLinha()][p.getColuna()]=true;
