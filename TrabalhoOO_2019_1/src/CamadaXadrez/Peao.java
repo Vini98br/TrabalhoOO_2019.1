@@ -1,10 +1,15 @@
 package CamadaXadrez;
 
 import CamadaTabuleiro.Posicao;
+import CamadaTabuleiro.Tabuleiro;
 import CamadaXadrez.Enum.Cor;
 
 public class Peao extends PecaXadrez implements Movimento {
 
+    public Peao(Tabuleiro tabuleiro, Cor cor) {
+        super(tabuleiro, cor);
+    }
+    
     @Override
     public boolean[][] movimentosPossiveis() {
         boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
@@ -76,8 +81,7 @@ public class Peao extends PecaXadrez implements Movimento {
     }
 
     @Override
-    public boolean possivelMovimento(Posicao posicao
-    ) {
+    public boolean possivelMovimento(Posicao posicao) {
         return movimentosPossiveis()[posicao.getLinha()][posicao.getColuna()];
     }
 
