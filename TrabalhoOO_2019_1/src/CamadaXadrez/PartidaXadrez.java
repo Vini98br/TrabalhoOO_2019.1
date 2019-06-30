@@ -26,6 +26,8 @@ public class PartidaXadrez
 
     private List<PecaXadrez> pecasNoTabuleiro = new ArrayList<>();
     private List<PecaXadrez> pecasCapturadas = new ArrayList<>();
+    
+    private PecaXadrez enPassantVulneravel;
 
     public PartidaXadrez()
     {
@@ -70,7 +72,7 @@ public class PartidaXadrez
         Posicao origem2 = origem.paraPosicao();
         Posicao destino2 = destino.paraPosicao();
         validarPosicaoOrigem(origem2);
-        //validarPosicaoDestino(origem2,destino2);
+        validarPosicaoDestino(origem2,destino2);
         PecaXadrez pecaCapturada = movimenta(origem2, destino2);
         
         if(testaCheck(JogadorAtual))
@@ -79,9 +81,21 @@ public class PartidaXadrez
             throw new XadrezException("Não é possivel se colocar em check");
         }
         
+        PecaXadrez pecaMovida = (PecaXadrez) tabuleiro.peca(destino2);
+        
         check = (testaCheck(oponente(JogadorAtual))) ? true : false;
         
+        /*if(testeCheckMate(oponente(jogadorAtual))){
+            checkmate = true;
+        }
+        */
+        //else{
         nextTurn();
+        //}
+        
+        //movimento especial en passant
+       // if(pecaMovida instaceof Peao)
+        
         return pecaCapturada;
     }
 
@@ -201,6 +215,10 @@ public class PartidaXadrez
         return null;
     }
 
+    public PecaXadrez getenPassantVulneravel(){
+        return enPassantVulneravel;
+    }
+    
     public int getTurn()
     {
         return turn;
