@@ -5,6 +5,7 @@ import CamadaTabuleiro.Posicao;
 import CamadaXadrez.Enum.Cor;
 import CamadaXadrez.Exception.XadrezException;
 import CamadaTabuleiro.Posicao;
+import CamadaXadrez.PecaXadrez;
 import CamadaXadrez.Rei;
 import CamadaXadrez.Torre;
 import java.util.ArrayList;
@@ -64,6 +65,7 @@ public class PartidaXadrez
         Posicao destino2 = destino.paraPosicao();
         validarPosicaoOrigem(origem2);
         PecaXadrez pecaCapturada = movimenta(origem2, destino2);
+        nextTurn();
         return pecaCapturada;
     }
 
@@ -87,6 +89,12 @@ public class PartidaXadrez
         if (!tabuleiro.temPeca(posicao))
         {
             throw new XadrezException("Não tem nenhuma peça na posicao de origem");
+        }
+        if(JogadorAtual != (tabuleiro.peca(posicao)).getCor()){
+            throw new XadrezException("A peça escolhida não é sua");
+        }
+        if(!tabuleiro.peca(posicao).possivelMovimento(posicao)){
+            throw new XadrezException("Não existe movimentos possíveis para a peça selecionada");
         }
     }
 
