@@ -68,8 +68,6 @@ public class PartidaXadrez
         validarPosicaoOrigem(origem2);
         //validarPosicaoDestino(origem2,destino2);
         PecaXadrez pecaCapturada = movimenta(origem2, destino2);
-<<<<<<< HEAD
-=======
         
         if(testaCheck(JogadorAtual))
         {
@@ -79,7 +77,6 @@ public class PartidaXadrez
         
         check = (testaCheck(oponente(JogadorAtual))) ? true : false;
         
->>>>>>> c86a98be528bafe9577914ce93ed4aaab1c70f75
         nextTurn();
         return pecaCapturada;
     }
@@ -126,6 +123,14 @@ public class PartidaXadrez
             throw new XadrezException("Não existe movimentos possíveis para a peça selecionada");
         }
     }
+    
+    private void validarPosicaoDestino(Posicao origem, Posicao destino)
+    {
+        if(!tabuleiro.peca(origem).possivelMovimento(destino)){
+            throw new XadrezException("A peça escolhida não pode ir pra posição de destino");
+        }
+    }
+    
 
     public boolean[][] movimentosPossiveis(PosicaoPeca posicaoInicial)
     {
