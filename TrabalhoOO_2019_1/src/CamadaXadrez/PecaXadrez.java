@@ -39,11 +39,14 @@ public class PecaXadrez implements Movimento
     }
         
     public PosicaoPeca getPosicaoPeca(){
-        return null;
+        
+        return PosicaoPeca.dePosicao(posicao);
+        
     }
     
     public boolean temPecaRival(Posicao posicao){
-        return false;
+        PecaXadrez p = getTabuleiro().peca(posicao);
+        return p != null && p.getCor() != cor;
     }
     
     public void incrementaContador(){
