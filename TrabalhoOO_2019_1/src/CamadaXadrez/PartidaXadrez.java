@@ -201,8 +201,8 @@ public class PartidaXadrez
     private void setUpInicial()
     {
         tabuleiro.posicionaPeca(new Torre(tabuleiro, Cor.BRANCA), new Posicao(2, 1));
-        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.PRETA), new Posicao(3, 1));
-
+        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.PRETA, this), new Posicao(3, 1));
+        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.BRANCA, this), new Posicao(3,8));
     }
 
     public PosicaoPeca movimento(PosicaoPeca posicaoInicial, PosicaoPeca posicaoAlvo)
