@@ -32,7 +32,7 @@ public class Tabuleiro
         {
             throw new TabuleiroException("Posição não existe no tabuleiro!");
         }
-        return this.pecas[lin][col];
+        return pecas[lin][col];
     }
     
     public PecaXadrez peca(Posicao posicao)//sobrecarga da funçao acima, retorna uma peça dada uma posiçao
@@ -48,7 +48,7 @@ public class Tabuleiro
     {
         if(temPeca(posicao))
         {
-            throw new TabuleiroException("Já tem uma peça na posição (" + posicao+")");
+            throw new TabuleiroException("Já tem uma peça na posição (" + posicao + ")");
         }
         pecas[posicao.getLinha()][posicao.getColuna()] = peca;
         peca.posicao = posicao;
@@ -70,7 +70,7 @@ public class Tabuleiro
     
     private boolean posicaoExiste(int linha, int coluna)//funcao auxilixar que verifica se uma posicao existe por meio de uma linha e uma coluna
     {                                           
-        return linha >= 0 && linha < linhas && coluna >= 0 && coluna < colunas;
+        return linha >= 0 && linha < this.linhas && coluna >= 0 && coluna < this.colunas;
     }
     
     public boolean posicaoExiste(Posicao posicao)//funcao que verifica a existencia de uma posicao por meio de uma posicao 

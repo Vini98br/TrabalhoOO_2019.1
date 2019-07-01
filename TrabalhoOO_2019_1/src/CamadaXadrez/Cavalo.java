@@ -16,6 +16,12 @@ public class Cavalo extends PecaXadrez implements Movimento {
     }
 
     @Override
+    public String toString()
+    {
+        return "C";
+    }
+    
+    @Override
     public boolean[][] movimentosPossiveis() {
         boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
         Posicao p = new Posicao(0, 0);

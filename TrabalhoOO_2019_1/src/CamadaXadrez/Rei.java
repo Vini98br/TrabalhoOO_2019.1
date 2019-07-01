@@ -7,16 +7,17 @@ import CamadaXadrez.PecaXadrez;
 
 public class Rei extends PecaXadrez implements Movimento{
 
-    private PartidaXadrez partida;
+
+    private PartidaXadrez partida; 
     
     public Rei(Tabuleiro tabuleiro, Cor cor, PartidaXadrez partida){
         super(tabuleiro, cor);
-        this.partida = partida;
+        this.partida=partida;
     }
     
     @Override
     public String toString(){
-        return "k";
+        return "K";
     }
     private boolean podeMover(Posicao posicao) {
         PecaXadrez p = (PecaXadrez) getTabuleiro().peca(posicao);

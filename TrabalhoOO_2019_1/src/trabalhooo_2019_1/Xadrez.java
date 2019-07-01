@@ -19,15 +19,14 @@ public class Xadrez
         PartidaXadrez partida = new PartidaXadrez();
         List<PecaXadrez> capturadas = new ArrayList<>();
 
-        while (true)
+        while (!partida.isCheckmate())
         {
             try
             {
-                
-                PecaXadrez[][] mat = partida.getPecas();
                 IU.clearScreen();
-                IU.imprimePartida(partida,capturadas);
-                IU.imprimeTabuleiro(mat);
+                IU.imprimePartida(partida, capturadas);
+                //PecaXadrez[][] mat = partida.getPecas();
+                //IU.imprimeTabuleiro(mat);
                 System.out.println();
                 System.out.print("Origem: ");
                 PosicaoPeca origem = IU.lePosicaoPeca(teclado);
@@ -35,20 +34,17 @@ public class Xadrez
                 boolean[][] movimentosPossiveis = partida.movimentosPossiveis(origem);
                 IU.clearScreen();
                 IU.imprimeTabuleiro(partida.getPecas(), movimentosPossiveis);
-                
-                
                 System.out.println();
                 System.out.print("Destino: ");
                 PosicaoPeca destino = IU.lePosicaoPeca(teclado);
 
                 PecaXadrez pecaCapturada = partida.fazMovimento(origem, destino);
-                if(pecaCapturada != null)
+                
+                if (pecaCapturada != null)
                 {
                     capturadas.add(pecaCapturada);
                 }
-                
-                
-                
+
             } catch (XadrezException e)
             {
                 System.out.println(e.getMessage());
@@ -57,8 +53,9 @@ public class Xadrez
             {
                 System.out.println(e.getMessage());
                 teclado.nextLine();
-            }
+            } 
         }
+        IU.clearScreen();
+        IU.imprimePartida(partida, capturadas);
     }
-
 }

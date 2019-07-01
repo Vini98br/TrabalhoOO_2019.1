@@ -51,10 +51,17 @@ public class IU
         ImprimePecasCapturadas(capturadas);
         System.out.println();
         System.out.println("Jogador da vez : " + partida.getTurn());
+        if(!partida.isCheckmate()){
         System.out.println("Esperando jogador: " + partida.getJogadorAtual());
         if(partida.isCheck())
         {
             System.out.println("CHECK!");
+        }
+        }
+        else
+        {
+            System.out.println("CHECKMATE!");
+            System.out.println("Vencedor: " + partida.getJogadorAtual());
         }
     }
 
@@ -74,7 +81,7 @@ public class IU
     }
 
     public static void imprimeTabuleiro(PecaXadrez[][] pecas)
-    {
+    {        
         for (int i = 0; i < pecas.length; i++)
         {
             System.out.print((8 - i) + " ");

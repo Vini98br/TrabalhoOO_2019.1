@@ -8,9 +8,15 @@ public class Peao extends PecaXadrez implements Movimento {
 
     private PartidaXadrez partida;
     
+<<<<<<< HEAD
     public Peao(Tabuleiro tabuleiro, Cor cor, PartidaXadrez partida) {
         super(tabuleiro, cor);
         this.partida = partida;
+=======
+    public Peao(Tabuleiro tabuleiro, Cor cor , PartidaXadrez partida) {
+        super(tabuleiro, cor);
+        this.partida=partida;
+>>>>>>> 7e0f63b01a58d093b28faf0831fb1edce1b44055
     }
     
     @Override
