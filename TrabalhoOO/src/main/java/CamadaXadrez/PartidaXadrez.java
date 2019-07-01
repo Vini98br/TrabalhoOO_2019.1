@@ -395,7 +395,6 @@ public class PartidaXadrez
         posicionaNovaPeca('g', 7, new Peao(tabuleiro, Cor.PRETA, this));
         posicionaNovaPeca('h', 7, new Peao(tabuleiro, Cor.PRETA, this));
 
-
     }
 
     public PosicaoPeca movimento(PosicaoPeca posicaoInicial, PosicaoPeca posicaoAlvo)
