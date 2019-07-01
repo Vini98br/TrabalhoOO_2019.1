@@ -6,8 +6,11 @@ import CamadaXadrez.Enum.Cor;
 
 public class Peao extends PecaXadrez implements Movimento {
 
-    public Peao(Tabuleiro tabuleiro, Cor cor) {
+    private PartidaXadrez partida;
+    
+    public Peao(Tabuleiro tabuleiro, Cor cor , PartidaXadrez partida) {
         super(tabuleiro, cor);
+        this.partida=partida;
     }
     
     @Override

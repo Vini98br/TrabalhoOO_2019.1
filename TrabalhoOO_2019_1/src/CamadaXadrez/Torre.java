@@ -18,7 +18,7 @@ public class Torre extends PecaXadrez implements Movimento{
   @Override
     public boolean[][] movimentosPossiveis()
     {
-       boolean[][] mat = movimentosPossiveis();
+        boolean[][] mat = movimentosPossiveis();
         Posicao p = new Posicao(0, 0);
         
         //acima

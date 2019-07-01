@@ -6,13 +6,16 @@ import CamadaXadrez.Enum.Cor;
 
 public class Rei extends PecaXadrez implements Movimento{
 
-    public Rei(Tabuleiro tabuleiro, Cor cor){
+    private PartidaXadrez partida; 
+    
+    public Rei(Tabuleiro tabuleiro, Cor cor, PartidaXadrez partida){
         super(tabuleiro, cor);
+        this.partida=partida;
     }
     
     @Override
     public String toString(){
-        return "k";
+        return "K";
     }
     private boolean podeMover(Posicao posicao) {
         PecaXadrez p = (PecaXadrez) getTabuleiro().peca(posicao);

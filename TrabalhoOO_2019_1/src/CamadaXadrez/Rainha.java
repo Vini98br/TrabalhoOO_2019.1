@@ -1,9 +1,23 @@
 package CamadaXadrez;
 
 import CamadaTabuleiro.Posicao;
+import CamadaTabuleiro.Tabuleiro;
+import CamadaXadrez.Enum.Cor;
 
 public class Rainha extends PecaXadrez implements Movimento{
 
+    
+     
+    public Rainha(Tabuleiro tabuleiro, Cor cor){
+        super(tabuleiro, cor);
+    }
+    
+    @Override
+    public String toString()
+    {
+        return "Q";
+    }
+    
     @Override
     public boolean[][] movimentosPossiveis()
     {

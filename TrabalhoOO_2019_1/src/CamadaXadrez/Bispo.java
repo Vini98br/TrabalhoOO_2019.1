@@ -11,6 +11,12 @@ public class Bispo extends PecaXadrez implements Movimento{
     }
     
     @Override
+    public String toString()
+    {
+        return "B";
+    }
+    
+    @Override
     public boolean[][] movimentosPossiveis()
     {
         boolean[][] mat = movimentosPossiveis();
