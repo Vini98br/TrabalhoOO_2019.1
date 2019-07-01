@@ -33,11 +33,10 @@ public class IU
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-    
     public IU()
     {
     }
-    
+
     public static void clearScreen()
     {
         System.out.println("\033[H\033[2J");
@@ -51,12 +50,13 @@ public class IU
         ImprimePecasCapturadas(capturadas);
         System.out.println();
         System.out.println("Jogador da vez : " + partida.getTurn());
-        if(!partida.isCheckmate()){
-        System.out.println("Esperando jogador: " + partida.getJogadorAtual());
-        if(partida.isCheck())
+        if (!partida.isCheckmate())
         {
-            System.out.println("CHECK!");
-        }
+            System.out.println("Esperando jogador: " + partida.getJogadorAtual());
+            if (partida.isCheck())
+            {
+                System.out.println("CHECK!");
+            }
         }
         else
         {
@@ -64,7 +64,6 @@ public class IU
             System.out.println("Vencedor: " + partida.getJogadorAtual());
         }
     }
-
 
     public static PosicaoPeca lePosicaoPeca(Scanner sc)
     {
@@ -81,13 +80,13 @@ public class IU
     }
 
     public static void imprimeTabuleiro(PecaXadrez[][] pecas)
-    {        
+    {
         for (int i = 0; i < pecas.length; i++)
         {
             System.out.print((8 - i) + " ");
             for (int j = 0; j < pecas.length; j++)
             {
-                imprimePeca(pecas[i][j],false);
+                imprimePeca(pecas[i][j], false);
             }
             System.out.println();
         }
@@ -101,7 +100,7 @@ public class IU
             System.out.print((8 - i) + " ");
             for (int j = 0; j < pecas.length; j++)
             {
-                imprimePeca(pecas[i][j],movimentosPossiveis[i][j]);
+                imprimePeca(pecas[i][j], movimentosPossiveis[i][j]);
             }
             System.out.println();
         }

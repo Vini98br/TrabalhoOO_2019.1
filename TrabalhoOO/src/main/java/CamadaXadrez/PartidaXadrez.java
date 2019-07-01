@@ -265,7 +265,7 @@ public class PartidaXadrez
     {
         if (!tabuleiro.temPeca(posicao))
         {
-            throw new XadrezException("Não tem nenhuma peça na posicao de origem");
+            throw new XadrezException("Não tem nenhuma peça na posicao nessa posicao");
         }
         if(JogadorAtual != ((PecaXadrez)tabuleiro.peca(posicao)).getCor()){
             throw new XadrezException("A peça escolhida não é sua");
@@ -278,7 +278,7 @@ public class PartidaXadrez
     private void validarPosicaoDestino(Posicao origem, Posicao destino)
     {
         if(!tabuleiro.peca(origem).possiveisMovimentos(destino)){
-            throw new XadrezException("A peça escolhida não pode ir pra posição de destino");
+            throw new XadrezException("A peça escolhida não pode ir para a posição de destino escolhida");
         }
     }
 
