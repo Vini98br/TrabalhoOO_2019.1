@@ -9,7 +9,7 @@ public class Tabuleiro
 {
     private int colunas;
     private int linhas;
-    private PecaXadrez[][] pecas;
+    private Peca[][] pecas;
 
     public Tabuleiro(){
       
@@ -23,10 +23,10 @@ public class Tabuleiro
         }
         this.colunas = colunas;
         this.linhas = linhas;
-        pecas = new PecaXadrez[linhas][colunas];
+        pecas = new Peca[linhas][colunas];
     }
         
-    public PecaXadrez peca(int lin ,int col)//retorna uma peça dada uma linha e uma coluna
+    public Peca peca(int lin ,int col)//retorna uma peça dada uma linha e uma coluna
     { 
         if(!posicaoExiste(lin, col))
         {
@@ -35,7 +35,7 @@ public class Tabuleiro
         return pecas[lin][col];
     }
     
-    public PecaXadrez peca(Posicao posicao)//sobrecarga da funçao acima, retorna uma peça dada uma posiçao
+    public Peca peca(Posicao posicao)//sobrecarga da funçao acima, retorna uma peça dada uma posiçao
     {
         if(!posicaoExiste(posicao))
         {
@@ -44,7 +44,7 @@ public class Tabuleiro
         return pecas[posicao.getLinha()][posicao.getColuna()];
     }
     
-    public void posicionaPeca(PecaXadrez peca, Posicao posicao)
+    public void posicionaPeca(Peca peca, Posicao posicao)
     {
         if(temPeca(posicao))
         {
@@ -55,14 +55,14 @@ public class Tabuleiro
         
     }
     
-    public PecaXadrez removePeca(Posicao posicao){
+    public Peca removePeca(Posicao posicao){
         if(!posicaoExiste(posicao)){
             throw new TabuleiroException("Posição não encontrada!");
         }
         if(peca(posicao) == null){
             return null;
         }
-        PecaXadrez aux = new PecaXadrez(posicao);
+        Peca aux = peca(posicao);
         aux.posicao = null;
         pecas[posicao.getLinha()][posicao.getColuna()] = null;
         return aux;

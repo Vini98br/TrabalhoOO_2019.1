@@ -4,7 +4,7 @@ import CamadaTabuleiro.Posicao;
 import CamadaTabuleiro.Tabuleiro;
 import CamadaXadrez.Enum.Cor;
 
-public class Peao extends PecaXadrez implements Movimento {
+public class Peao extends PecaXadrez  {
 
     private PartidaXadrez partida;
     
@@ -110,25 +110,5 @@ public class Peao extends PecaXadrez implements Movimento {
     public String toString(){
         //manda retorna letra p do peao
         return "P";
-    }
-
-    @Override
-    public boolean possivelMovimento(Posicao posicao) {
-        return movimentosPossiveis()[posicao.getLinha()][posicao.getColuna()];
-    }
-
-    @Override
-    public boolean temAlgumPossivelMovimento()//Roda a matriz em busca de ao menos um movimento possivel na matriz
-    {
-        boolean[][] mat = movimentosPossiveis();
-        for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat.length; j++) {
-                if (mat[i][j])//se achou alguma posiçao
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 }

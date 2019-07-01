@@ -5,7 +5,7 @@ import CamadaTabuleiro.Tabuleiro;
 import CamadaXadrez.Enum.Cor;
 import CamadaXadrez.PecaXadrez;
 
-public class Rei extends PecaXadrez implements Movimento{
+public class Rei extends PecaXadrez {
 
 
     private PartidaXadrez partida; 
@@ -121,31 +121,7 @@ public class Rei extends PecaXadrez implements Movimento{
     }
     
     private boolean testeTorreRoque(Posicao posicao){
-        PecaXadrez p = getTabuleiro().peca(posicao);
+        PecaXadrez p = (PecaXadrez)getTabuleiro().peca(posicao);
         return p != null && p instanceof Torre && p.getCor() == getCor() && p.getContaMovimentos() == 0;
-    }
-
-   @Override
-    public boolean possivelMovimento(Posicao posicao)
-    {
-       return movimentosPossiveis()[posicao.getLinha()][posicao.getColuna()]; 
-    }
-
-    @Override
-    public boolean temAlgumPossivelMovimento()//Roda a matriz em busca de ao menos um movimento possivel na matriz
-    {
-        boolean[][] mat = movimentosPossiveis();
-        for(int i=0 ; i<mat.length; i++)
-        {
-            for(int j=0; j<mat.length;j++)
-            {
-                if(mat[i][j])//se achou alguma posiçao
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    
+    }    
 }

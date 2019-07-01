@@ -14,6 +14,7 @@ public abstract class Peca
 
     protected Posicao posicao;
     private Tabuleiro tabuleiro;
+    
 
     public Peca(Tabuleiro tabuleiro)
     {
@@ -28,7 +29,7 @@ public abstract class Peca
 
     public abstract boolean[][] movimentosPossiveis();
 
-    public boolean possiveisMovimentos(Posicao position)
+    public boolean possiveisMovimentos(Posicao posicao)
     {
         return movimentosPossiveis()[posicao.getLinha()][posicao.getColuna()];
     }
@@ -48,4 +49,5 @@ public abstract class Peca
         }
         return false;
     }
+
 }

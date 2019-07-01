@@ -4,7 +4,7 @@ import CamadaTabuleiro.Posicao;
 import CamadaTabuleiro.Tabuleiro;
 import CamadaXadrez.Enum.Cor;
 
-public class Cavalo extends PecaXadrez implements Movimento {
+public class Cavalo extends PecaXadrez {
 
     public Cavalo(Tabuleiro tabuleiro, Cor cor) {
         super(tabuleiro, cor);
@@ -75,25 +75,5 @@ public class Cavalo extends PecaXadrez implements Movimento {
         }
 
         return mat;
-    }
-
-    @Override
-    public boolean possivelMovimento(Posicao posicao) {
-        return movimentosPossiveis()[posicao.getLinha()][posicao.getColuna()];
-    }
-
-    @Override
-    public boolean temAlgumPossivelMovimento()//Roda a matriz em busca de ao menos um movimento possivel na matriz
-    {
-        boolean[][] mat = movimentosPossiveis();
-        for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat.length; j++) {
-                if (mat[i][j])//se achou alguma posiçao
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 }

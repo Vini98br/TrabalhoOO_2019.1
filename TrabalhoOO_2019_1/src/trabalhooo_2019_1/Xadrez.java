@@ -25,8 +25,6 @@ public class Xadrez
             {
                 IU.clearScreen();
                 IU.imprimePartida(partida, capturadas);
-                //PecaXadrez[][] mat = partida.getPecas();
-                //IU.imprimeTabuleiro(mat);
                 System.out.println();
                 System.out.print("Origem: ");
                 PosicaoPeca origem = IU.lePosicaoPeca(teclado);
