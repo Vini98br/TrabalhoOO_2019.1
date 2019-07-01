@@ -44,6 +44,13 @@ public class Xadrez
                 {
                     capturadas.add(pecaCapturada);
                 }
+                
+                if(partida.getPromocao() != null)
+                {
+                    System.out.print("digite a peça para ser promovida (B/C/T/Q)");
+                    String tipo = teclado.nextLine();
+                    partida.substituiPecaPromovida(tipo);
+                }
 
             } catch (XadrezException e)
             {
