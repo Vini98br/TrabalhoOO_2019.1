@@ -81,20 +81,28 @@ public class PartidaXadrez
             throw new XadrezException("Não é possivel se colocar em check");
         }
         
-        PecaXadrez pecaMovida = (PecaXadrez) tabuleiro.peca(destino2);
+        PecaXadrez pecaMovida = tabuleiro.peca(destino2);
         
         check = (testaCheck(oponente(JogadorAtual))) ? true : false;
         
-        /*if(testeCheckMate(oponente(jogadorAtual))){
+        if(testaCheckMate(oponente(JogadorAtual)))
+        {
             checkmate = true;
         }
-        */
-        //else{
+        else
+        {
         nextTurn();
-        //}
+        }
         
         //movimento especial en passant
-       // if(pecaMovida instaceof Peao)
+         if(pecaMovida instanceof Peao && (destino.getLinha() == origem.getLinha()-2 || destino.getLinha() == origem.getLinha()))
+         {
+            enPassantVulneravel = pecaMovida;
+         }
+         else
+         {
+            enPassantVulneravel = null;
+         }
         
         return pecaCapturada;
     }
