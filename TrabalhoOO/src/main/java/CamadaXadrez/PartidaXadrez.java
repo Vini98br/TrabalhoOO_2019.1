@@ -369,14 +369,14 @@ public class PartidaXadrez
         posicionaNovaPeca('f', 1, new Bispo(tabuleiro, Cor.BRANCA));
         posicionaNovaPeca('g', 1, new Cavalo(tabuleiro, Cor.BRANCA));
         posicionaNovaPeca('h', 1, new Torre(tabuleiro, Cor.BRANCA));
-        posicionaNovaPeca('a', 2, new Peao(tabuleiro, Cor.BRANCA, this));
+        /*posicionaNovaPeca('a', 2, new Peao(tabuleiro, Cor.BRANCA, this));
         posicionaNovaPeca('b', 2, new Peao(tabuleiro, Cor.BRANCA, this));
         posicionaNovaPeca('c', 2, new Peao(tabuleiro, Cor.BRANCA, this));
         posicionaNovaPeca('d', 2, new Peao(tabuleiro, Cor.BRANCA, this));
         posicionaNovaPeca('e', 2, new Peao(tabuleiro, Cor.BRANCA, this));
         posicionaNovaPeca('f', 2, new Peao(tabuleiro, Cor.BRANCA, this));
         posicionaNovaPeca('g', 2, new Peao(tabuleiro, Cor.BRANCA, this));
-        posicionaNovaPeca('h', 2, new Peao(tabuleiro, Cor.BRANCA, this));
+        posicionaNovaPeca('h', 2, new Peao(tabuleiro, Cor.BRANCA, this));*/
 
         posicionaNovaPeca('a', 8, new Torre(tabuleiro, Cor.PRETA));
         posicionaNovaPeca('b', 8, new Cavalo(tabuleiro, Cor.PRETA));
