@@ -7,19 +7,12 @@ import CamadaXadrez.PecaXadrez;
 
 public class Rei extends PecaXadrez implements Movimento{
 
-<<<<<<< HEAD
+
     private PartidaXadrez partida; 
     
     public Rei(Tabuleiro tabuleiro, Cor cor, PartidaXadrez partida){
         super(tabuleiro, cor);
         this.partida=partida;
-=======
-    private PartidaXadrez partida;
-    
-    public Rei(Tabuleiro tabuleiro, Cor cor, PartidaXadrez partida){
-        super(tabuleiro, cor);
-        this.partida = partida;
->>>>>>> ba22d04a0e1e4402a9f675bfaaf0e9a7d9e4ef07
     }
     
     @Override
