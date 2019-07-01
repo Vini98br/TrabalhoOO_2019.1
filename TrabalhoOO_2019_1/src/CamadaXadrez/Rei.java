@@ -3,14 +3,23 @@ package CamadaXadrez;
 import CamadaTabuleiro.Posicao;
 import CamadaTabuleiro.Tabuleiro;
 import CamadaXadrez.Enum.Cor;
+import CamadaXadrez.PecaXadrez;
 
 public class Rei extends PecaXadrez implements Movimento{
 
+<<<<<<< HEAD
     private PartidaXadrez partida; 
     
     public Rei(Tabuleiro tabuleiro, Cor cor, PartidaXadrez partida){
         super(tabuleiro, cor);
         this.partida=partida;
+=======
+    private PartidaXadrez partida;
+    
+    public Rei(Tabuleiro tabuleiro, Cor cor, PartidaXadrez partida){
+        super(tabuleiro, cor);
+        this.partida = partida;
+>>>>>>> ba22d04a0e1e4402a9f675bfaaf0e9a7d9e4ef07
     }
     
     @Override
@@ -87,12 +96,41 @@ public class Rei extends PecaXadrez implements Movimento{
             mat[p.getLinha()][p.getColuna()]=true;
         }
         
-        
-        
+        //#movimentoEspecial Roque
+        if(getContaMovimentos() == 0 && !partida.isCheck())
+        {
+            //movimento especial roque pequeno
+            Posicao posicaoDaTorre1 = new Posicao(posicao.getLinha(), posicao.getColuna()+3);
+            if(testeTorreRoque(posicaoDaTorre1))
+            {
+                Posicao p1 = new Posicao(posicao.getLinha(), posicao.getColuna()+1);
+                Posicao p2 = new Posicao(posicao.getLinha(), posicao.getColuna()+2);
+                if(getTabuleiro().peca(p1) == null && getTabuleiro().peca(p2) == null)
+                {
+                    mat[posicao.getLinha()][posicao.getColuna()+2] = true;
+                }
+            }
+            //movimento especial roque grande
+            Posicao posicaoDaTorre2 = new Posicao(posicao.getLinha(), posicao.getColuna()-4);
+            if(testeTorreRoque(posicaoDaTorre2))
+            {
+                Posicao p1 = new Posicao(posicao.getLinha(), posicao.getColuna()-1);
+                Posicao p2 = new Posicao(posicao.getLinha(), posicao.getColuna()-2);
+                Posicao p3 = new Posicao(posicao.getLinha(), posicao.getColuna()-3);
+                if(getTabuleiro().peca(p1) == null && getTabuleiro().peca(p2) == null && getTabuleiro().peca(p3) == null)
+                {
+                    mat[posicao.getLinha()][posicao.getColuna()-2] = true;
+                }
+            }
+        }
         
         return mat;
     }
-
+    
+    private boolean testeTorreRoque(Posicao posicao){
+        PecaXadrez p = getTabuleiro().peca(posicao);
+        return p != null && p instanceof Torre && p.getCor() == getCor() && p.getContaMovimentos() == 0;
+    }
 
    @Override
     public boolean possivelMovimento(Posicao posicao)
