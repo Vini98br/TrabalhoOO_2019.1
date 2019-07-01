@@ -92,23 +92,10 @@ public class PartidaXadrez
         
         check = (testaCheck(oponente(JogadorAtual))) ? true : false;
         
-<<<<<<< HEAD
-        if(testaCheckMate(oponente(JogadorAtual)))
-        {
-=======
-<<<<<<< HEAD
+      
         if(testaCheckMate(oponente(JogadorAtual)))
         {
             checkmate=true;
-        }
-        else
-        {
-        nextTurn();
-        }
-=======
-        /*if(testeCheckMate(oponente(jogadorAtual))){
->>>>>>> 7e0f63b01a58d093b28faf0831fb1edce1b44055
-            checkmate = true;
         }
         else
         {
@@ -125,7 +112,7 @@ public class PartidaXadrez
             enPassantVulneravel = null;
          }
         
->>>>>>> ba22d04a0e1e4402a9f675bfaaf0e9a7d9e4ef07
+
         return pecaCapturada;
     }
 
@@ -297,8 +284,8 @@ public class PartidaXadrez
     
     private void setUpInicial()
     {
-<<<<<<< HEAD
-       posicionaNovaPeca('a', 1, new Torre(tabuleiro, Cor.BRANCA));
+
+        posicionaNovaPeca('a', 1, new Torre(tabuleiro, Cor.BRANCA));
         posicionaNovaPeca('b', 1, new Cavalo(tabuleiro, Cor.BRANCA));
         posicionaNovaPeca('c', 1, new Bispo(tabuleiro, Cor.BRANCA));
         posicionaNovaPeca('d', 1, new Rainha(tabuleiro, Cor.BRANCA));
@@ -332,11 +319,7 @@ public class PartidaXadrez
         posicionaNovaPeca('g', 7, new Peao(tabuleiro, Cor.PRETA, this));
         posicionaNovaPeca('h', 7, new Peao(tabuleiro, Cor.PRETA, this));*/
 
-=======
-        tabuleiro.posicionaPeca(new Torre(tabuleiro, Cor.BRANCA), new Posicao(2, 1));
-        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.PRETA, this), new Posicao(3, 1));
-        tabuleiro.posicionaPeca(new Rei(tabuleiro, Cor.BRANCA, this), new Posicao(3,8));
->>>>>>> ba22d04a0e1e4402a9f675bfaaf0e9a7d9e4ef07
+
     }
 
     public PosicaoPeca movimento(PosicaoPeca posicaoInicial, PosicaoPeca posicaoAlvo)
