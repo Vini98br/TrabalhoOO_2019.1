@@ -89,17 +89,17 @@ public class Peao extends PecaXadrez  {
                 mat[p.getLinha()][p.getColuna()] = true;
             }
             //#movimento especial en passant peća preta
-            if(posicao.getLinha() == 3)
+            if(posicao.getLinha() == 4)
             {
                 Posicao esquerda = new Posicao(posicao.getLinha(), posicao.getColuna()-1);
                 if(getTabuleiro().posicaoExiste(esquerda) && temPecaRival(esquerda) && getTabuleiro().peca(esquerda) == partida.getenPassantVulneravel())
                 {
-                    mat[esquerda.getLinha() - 1][esquerda.getColuna()] = true;
+                    mat[esquerda.getLinha() + 1][esquerda.getColuna()] = true;
                 }
                 Posicao direita = new Posicao(posicao.getLinha(), posicao.getColuna()+1);
                 if(getTabuleiro().posicaoExiste(direita) && temPecaRival(direita) && getTabuleiro().peca(direita) == partida.getenPassantVulneravel())
                 {
-                    mat[direita.getLinha() - 1][direita.getColuna()] = true;
+                    mat[direita.getLinha() + 1][direita.getColuna()] = true;
                 }
             }
 
