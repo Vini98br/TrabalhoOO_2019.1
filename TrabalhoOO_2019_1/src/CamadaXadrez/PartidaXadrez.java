@@ -112,7 +112,25 @@ public class PartidaXadrez
             enPassantVulneravel = null;
          }
         
-
+         //#movimento especial en passant
+         if(pecaMovida instanceof Peao)
+         {
+             if(origem.getColuna()!=destino.getColuna() && pecaCapturada == null)
+             {
+                 Posicao pPeao;
+                 if(pecaMovida.getCor() == Cor.BRANCA)
+                 {
+                     pPeao = new Posicao(destino.getLinha() + 1, destino.getColuna());
+                 }
+                 else
+                 {
+                     pPeao = new Posicao(destino.getLinha() - 1, destino.getColuna());
+                 }
+                 pecaCapturada = tabuleiro.removePeca(pPeao);
+                 pecasCapturadas.add(pecaCapturada);
+                 pecasNoTabuleiro.remove(pecaCapturada);
+             }
+         }
         return pecaCapturada;
     }
 
@@ -183,6 +201,25 @@ public class PartidaXadrez
             tabuleiro.posicionaPeca(torre, origemT);
             torre.decrementaContador();
         }
+        
+        //#movimento especial en passant
+         if(p instanceof Peao)
+         {
+             if(origem.getColuna()!=alvo.getColuna() && pecaCapturada == enPassantVulneravel)
+             {
+                 PecaXadrez peao = tabuleiro.removePeca(alvo);
+                 Posicao pPeao;
+                 if(p.getCor() == Cor.BRANCA)
+                 {
+                     pPeao = new Posicao(3, alvo.getColuna());
+                 }
+                 else
+                 {
+                     pPeao = new Posicao(4, alvo.getColuna());
+                 }
+                 tabuleiro.posicionaPeca(peao, pPeao);
+             }
+         }
     }
     
     private void validarPosicaoOrigem(Posicao posicao)
