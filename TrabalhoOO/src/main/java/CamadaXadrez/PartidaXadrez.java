@@ -87,21 +87,9 @@ public class PartidaXadrez
                 promocao = substituiPecaPromovida("Q");
             }
         }
-         System.out.println("teste2");
-        //check = (testaCheck(oponente(JogadorAtual))) ? true : false;
-        System.out.println("teste3");
+         
         
-        /*if(testaCheckMate(oponente(JogadorAtual)))
-        {
-            System.out.println("teste4");
-            checkmate=true;
-        }
-        else
-        {*/
-            System.out.println("teste5");
-            nextTurn();
-        //}
-        System.out.println("teste6");
+       
         //movimento especial en passant
          if(pecaMovida instanceof Peao && (destino2.getLinha() == origem2.getLinha()-2 || destino2.getLinha() == origem2.getLinha()+2))
          {
@@ -112,7 +100,7 @@ public class PartidaXadrez
             enPassantVulneravel = null;
          }
         
-         System.out.println("teste7");
+        
         return (PecaXadrez)pecaCapturada;
     }
 
