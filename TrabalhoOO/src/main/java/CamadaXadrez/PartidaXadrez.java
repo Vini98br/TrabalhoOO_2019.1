@@ -74,11 +74,12 @@ public class PartidaXadrez
             desfazMovimento(origem2, destino2, pecaCapturada);
             throw new XadrezException("Não é possivel se colocar em check");
         }
-        System.out.println("teste1");
+        
         PecaXadrez pecaMovida = (PecaXadrez)tabuleiro.peca(destino2);
         
         //#movimento especial promoćão
         promocao = null;
+        
         if(pecaMovida instanceof Peao)
         {
             if(pecaMovida.getCor() == Cor.BRANCA && destino2.getLinha() == 0 || (pecaMovida.getCor() == Cor.PRETA &&destino2.getLinha() == 7))
@@ -88,7 +89,7 @@ public class PartidaXadrez
             }
         }
          
-        
+        nextTurn();
        
         //movimento especial en passant
          if(pecaMovida instanceof Peao && (destino2.getLinha() == origem2.getLinha()-2 || destino2.getLinha() == origem2.getLinha()+2))
